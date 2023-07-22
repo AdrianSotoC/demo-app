@@ -1,14 +1,60 @@
+import { useContext } from "react";
+import ProductContext from "../context/ProductContext";
+
 const ProductsPage = () => {
+  const {getProducts} = useContext(ProductContext)
+
+  const handleClick = async () => {
+    await getProducts()
+  }
+
   return (
     <>
-      <header className="row col">
-        <h1>Products Page</h1>
-      </header>
       <main className="row">
         <article className="col">
-          <p>Contenido de la pagina productos</p>
+          <button type="button" onClick={handleClick}>
+            Obtener Productos
+          </button>
         </article>
       </main>
+      <div className="row row-cols-1 row-cols-md-3 g-4">
+        <div className="col">
+          <div className="card">
+            <img src="..." class="card-img-top" alt="..."/>
+            <div className="card-body">
+              <h5 className="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div>
+        <div className="col">
+          <div className="card">
+            <img src="..." class="card-img-top" alt="..."/>
+            <div className="card-body">
+              <h5 className="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div>
+        <div className="col">
+          <div className="card">
+            <img src="..." class="card-img-top" alt="..."/>
+            <div className="card-body">
+              <h5 className="card-title">Card title</h5>
+              <p className="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+            </div>
+          </div>
+        </div>
+        <div className="col">
+          <div className="card">
+            <img src="..." class="card-img-top" alt="..."/>
+            <div className="card-body">
+              <h5 className="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
